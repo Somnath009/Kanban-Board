@@ -18,9 +18,11 @@ html{
     /* colors */
     --bg-color: rgb(16, 16, 16);
     --primary-text-color: #f4f4f4;
+    --task-primary-color: #3a3939;
     --button-primary-color: #242424;
+    --delete-button-color: rgba(239, 61, 22, 0.924);
 
-    /* paddind */
+    /* padding */
     --nav-padding: 15px 30px;
     --section-padding: 15px 30px;
 
@@ -85,6 +87,16 @@ section .task-column{
     background-color: var(--button-primary-color);
     flex-grow: 1;
     border-radius: var(--border-redius-l);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: var(--padding-m);
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+section .task-column.hover-over{
+    border: 2px dashed var(--primary-text-color);
+    scale: 1.04;
 }
 
 section .task-column .heading{
@@ -94,4 +106,25 @@ section .task-column .heading{
     justify-content: space-between;
     padding: var(--padding-l) var(--padding-xl);
     font-size: 18px;
+}
+
+section .task-column .task{
+    background-color: var(--task-primary-color);
+    padding: var(--padding-m) var(--padding-l);
+    border-radius: var(--border-redius-l);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: grab;
+}
+
+section .task-column .task button{
+    align-self: flex-end;
+    padding: var(--padding-m) var(--padding-l);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: var(--delete-button-color);
+    color: var(--primary-text-color);
 }
